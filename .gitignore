@@ -8,10 +8,7 @@ application.windows32
 application.windows64
 application.macosx
 out
-# criar lsitas de produtos
-produtos = ['caixa pizza','queijo','massa pizza','molho','calabresa','cebola','azeitona','frango','requeijão','milho']
-valores = [2.99,49.90,2.00,2.00,24.90,5.00,15.00,13.49,25.00,3.00]
-Categorias = ['embalagens','insumos']
+# criar listas de produtos
 produtos  =  [ 'caixa pizza','queijo','massa pizza','molho','calabresa','cebola','azeitona','frango','requeijão','milho' ] 
 valores  =  [ 2.99,49.90,2.00,2.00,24.90,5.00,15.00,13.49,25.00,3.00 ] 
 Categorias  =  [ 'embalagens','insumos' ]
@@ -24,9 +21,15 @@ print(cliente,
       
       cpf_cliente
      )
-
+#lista com produtos digitados
+carrinho_produtos = []
 #digitei o produto que deseja colocar no carrinho
 
-produto = input('Digite seu produto ')
-for i,produto in enumerate(produtos):
-    print(i)
+produto = input('Digitei o produto ')
+if produto in produtos:
+    pass
+else:
+    print('Digitei um produto válido! Nossos produtos são {}'.format(produtos))
+
+i = produtos.index(produto)
+print(valores[i])
