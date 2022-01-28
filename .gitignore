@@ -38,6 +38,6 @@ while True:
 soma_dos_produtos = 0  
 for valores in valores_produtos:
     soma_dos_produtos += valores
-
-print(soma_dos_produtos)
+texto = ('Total a pagar R$:{}'.format(soma_dos_produtos))
+print(texto)
     
