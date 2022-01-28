@@ -9,9 +9,8 @@ application.windows64
 application.macosx
 out
 # criar listas de produtos
-produtos  =  [ 'caixa pizza','queijo','massa pizza','molho','calabresa','cebola','azeitona','frango','requeijão','milho' ] 
-valores  =  [ 2.99,49.90,2.00,2.00,24.90,5.00,15.00,13.49,25.00,3.00 ] 
-Categorias  =  [ 'embalagens','insumos' ]
+produtos  =  [ 'caixa pizza','queijo','massa pizza','molho','calabresa','cebola','azeitona','frango','requeijão','milho'] 
+valores  =  [ 2.99,49.90,2.00,2.00,24.90,5.00,15.00,13.49,25.00,3.00] 
 
 #perguntar nome completo do cliente e cpf com input
 
@@ -23,13 +22,17 @@ print(cliente,
      )
 #lista com produtos digitados
 carrinho_produtos = []
+valores_produtos = []
 #digitei o produto que deseja colocar no carrinho
-
-produto = input('Digitei o produto ')
-if produto in produtos:
-    pass
-else:
-    print('Digitei um produto válido! Nossos produtos são {}'.format(produtos))
-
-i = produtos.index(produto)
-print(valores[i])
+while True:
+    produto = input('Digite o produto:     ')
+    if produto in produtos:
+        carrinho_produtos.append(produto)
+        pass
+    elif produto == '':
+        print('Suas compras foram {}'.format(carrinho_produtos))
+        break
+       
+    else:
+        print('Produto inválido, nossos produtos são {}, tente novamente!'.format(produtos))
+print(carrinho_produtos)
