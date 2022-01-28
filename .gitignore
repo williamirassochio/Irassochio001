@@ -23,16 +23,21 @@ print(cliente,
 #lista com produtos digitados
 carrinho_produtos = []
 valores_produtos = []
+
 #digitei o produto que deseja colocar no carrinho
 while True:
     produto = input('Digite o produto:     ')
-    if produto in produtos:
-        carrinho_produtos.append(produto)
-        pass
-    elif produto == '':
-        print('Suas compras foram {}'.format(carrinho_produtos))
+    if produto == '':
+        print('Pedido finalizado')
         break
-       
-    else:
-        print('Produto inválido, nossos produtos são {}, tente novamente!'.format(produtos))
-print(carrinho_produtos)
+        
+        
+    i = produtos.index(produto)
+    valores_produtos.append(valores[i])
+    print(valores_produtos)
+soma_dos_produtos = 0  
+for valores in valores_produtos:
+    soma_dos_produtos += valores
+
+print(soma_dos_produtos)
+    
